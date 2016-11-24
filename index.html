@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link  rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+<script src="validateForm.js"></script>
+<div class="form">
+<h1>Enter Patients Data</h1>
+
+<form action="http://localhost:8080/api/info" method="post" onsubmit="return validateForms()" name="form">
+  First name:<br>
+  <input type="text" name="firstname" id="fname" required>
+  <br>
+  Last name:<br>
+  <input type="text" name="lastname" id="lname" required><br>
+  DOB:<br>
+  <input type="date" name="dob" id="dob" min="1990-01-01" placeholder="2000-12-30">
+  <br>
+  Gender:<br>
+  <input list="gender" name="gen">
+  <datalist id="gender">
+  <option value="M">
+  <option value="F">
+  </datalist>
+  <br>
+  Phone:<br>
+  <input type="number" name="phone" id="phone" min="1000000000" max="99999999999">
+  <br>
+  
+  <input type="Submit" value="SUBMIT" id="submit" formtarget="http://localhost:8080/api/patients">
+  
+</form>
+</div> 		<!--closing class form -->
+</body>
+</html>
